@@ -1,0 +1,30 @@
+<div class='container'>
+   
+        
+    <h2> Enter location:</h2>    
+    <input type='text' ng-model='testLocation'/>  {{testLocation}}  
+    <br>    
+    <button ng-click='lokaatio()'>Location</button> <br>   
+    <div my-directive location="'Oulu,fi'"></div>
+    <p ng-show='products.length===0'>There are no products, Please add products</p>
+    <table ng-show='products.length > 0' class='prod_table' border=2>    
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Product price</th>
+                <th>Delete</th>
+                <th>Modify</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='product in products'>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td><button ng-click='deleteProduct($index)'>Delete</button></td>
+                <td><button ng-click='modifyProduct($index)'>Modify</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button ng-click='next()'>Add Products</button>
+    
+</div>
